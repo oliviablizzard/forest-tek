@@ -1,0 +1,30 @@
+@use '../../styles/partials/variables' as *;
+
+.header {
+    background-color: $green-med-dark;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border: 1px solid $text-white;
+    border-radius: 1rem;
+
+    &__name {
+        color: $text-white;
+    }
+}
+
+.menu {
+    border: 1px solid $text-white;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    width: 50px;
+    height: 30px;
+}
