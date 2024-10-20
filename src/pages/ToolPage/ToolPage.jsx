@@ -1,12 +1,12 @@
 import Header from '../../components/Header/Header';
-import Box from '../../components/Box/Box';
 import Footer from '../../components/Footer/Footer';
+import Tools from '../../components/Tools/Tools';
 
-export default function HomePage() {
+export default function ToolPage() {
     return (
         <>
             <Header />
-            <Box />
+            <Tools />
             <Footer />
         </>
     );
