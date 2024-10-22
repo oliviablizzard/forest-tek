@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="517.999" height="173.257" viewBox="0 0 517.999 173.257">
+  <g id="Group_133" data-name="Group 133" transform="translate(-2 61.307)">
+    <g id="Group_131" data-name="Group 131" transform="translate(0)">
+      <g id="Group_31" data-name="Group 31" transform="translate(0)">
+        <g id="Group_30" data-name="Group 30" transform="translate(0)">
+          <g id="Group_33" data-name="Group 33" transform="translate(2 -61.307)">
+            <path id="Path_98" data-name="Path 98" d="M43.349,173.257H0v-.008C0,77.565,77.634,0,173.394,0V43.314A129.994,129.994,0,0,0,43.349,173.257" transform="translate(0 0)" fill="#f96969"/>
+            <path id="Path_99" data-name="Path 99" d="M237.318,107.187V150.5a86.662,86.662,0,0,0-86.7,86.628H107.273A129.994,129.994,0,0,1,237.318,107.187" transform="translate(-63.924 -63.873)" fill="#ffbf2f"/>
+            <path id="Path_100" data-name="Path 100" d="M214.546,301a86.663,86.663,0,0,1,86.7-86.629V301Z" transform="translate(-127.849 -127.746)" fill="#6da53c"/>
+          </g>
+          <g id="Group_32" data-name="Group 32" transform="translate(346.867 -61.307)">
+            <path id="Path_104" data-name="Path 104" d="M0,0H173.132V173.257H0Z" transform="translate(0)" fill="#ffbf2f"/>
+            <path id="Path_101" data-name="Path 101" d="M651.724,25.615C664.132,14.927,678.8,6.852,694.592,0H658.67a171.958,171.958,0,0,0-29,23.271c-21.881,22.021-36.185,49.592-43.456,84.446v65.541h6.275c-.358-36.247,6.371-66.434,17.964-91.593-5.745,35.015,3.263,66,14.318,91.593h11.415c-23.477-72.82-6.836-123.965,15.536-147.642" transform="translate(-586.216 0)" fill="#a46a1d"/>
+            <path id="Path_102" data-name="Path 102" d="M869.262,1.068V0H845.157c-7.728,8.268-16.478,18.258-25.205,29.49-22.021,28.341-45.746,77.655-49.286,143.767h11.993c3.5-62.466,28.387-107.127,49.137-133.952A224.884,224.884,0,0,1,869.262,1.068" transform="translate(-696.13 0)" fill="#a46a1d"/>
+            <path id="Path_103" data-name="Path 103" d="M932.148,216.035C898.023,248.6,883.855,274.5,876.2,301.993h12.48c6.6-21.792,18.8-42.2,43.472-67.12Z" transform="translate(-759.016 -128.736)" fill="#a46a1d"/>
+          </g>
+          <path id="Path_105" data-name="Path 105" d="M0,0H173.132V173.257H0Z" transform="translate(174.394 -61.307)" fill="#c3d954"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

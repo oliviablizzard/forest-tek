@@ -1,0 +1,27 @@
+Services Nouveau-Brunswick - GeoNB
+http://www.snb.ca/geonb
+
+**DESCRIPTION**
+GRILLE 1:10,000 faisant partie de la Base de données des régions administratives du Nouveau-Brunswick (v1.0).
+
+**FORMAT**
+ESRI Shape File
+
+**DÉSIGNATION DES FICHIERS**
+geonb_10kgrid-10kgrille.* - graphiques et attributs
+geonb_10kgrid-10kgrille.txt - attributs supplémentaires
+
+**RÉFÉRENCES SPATIALES**
+Système de référence: North-American Datum 1983 (CSRS)
+Projection: Stéréographique sécante
+EPSG: 2953
+
+**SOURCE**
+Services Nouveau-Brunswick 
+
+**DATE**
+2005-03-07
+
+**LICENCE**
+Licence des données ouvertes de GeoNB
+http://geonb.snb.ca/documents/license/geonb-odl_fr.pdf

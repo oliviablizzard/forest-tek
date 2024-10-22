@@ -1,0 +1,26 @@
+Services Nouveau-Brunswick - GeoNB
+http://www.snb.ca/geonb
+
+**DESCRIPTION**
+Ce sont les limites communautaires maintenues du NB 9-1-1 qui sont reflétées dans les adresses civiques et les adresses postales.
+
+**FORMAT**
+ESRI Shape File
+
+**DÉSIGNATION DES FICHIERS**
+geonb_dps_communityboundaries.* - graphiques et attributs
+
+**RÉFÉRENCES SPATIALES**
+Système de référence: North-American Datum 1983 (CSRS)
+Projection: Stéréographique double
+EPSG: 2953
+
+**SOURCE**
+Ministère de la Sécurité publique
+
+**DATE**
+2024-10-21
+
+**LICENCE**
+GeoNB Licence
+http://geonb.snb.ca/downloads/documents/geonb_license_f.pdf
