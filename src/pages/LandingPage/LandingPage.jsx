@@ -45,6 +45,7 @@ export default function LandingPage() {
                             <h4 className="list__item">Conservation</h4>
                             <h4 className="list__item">Restoration</h4>
                             <h4 className="list__item--last">Adaptation</h4>
+                            <h4 className="list__item--last">Appreciation</h4>
                         </div>
                     </div>
                     <div>

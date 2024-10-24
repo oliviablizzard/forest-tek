@@ -1,0 +1,14 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/global' as *;
+
+.button {
+    border-radius: 0.5rem;
+    background-color: $sunny;
+    display: flex;
+    justify-content: center;
+}
+
+.button__content {
+    color: $spruce;
+}
+

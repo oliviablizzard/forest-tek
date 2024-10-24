@@ -1,12 +1,12 @@
 import Header from '../../components/Header/Header';
-import Box from '../../components/Box/Box';
+import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
 
 export default function ContactPage() {
     return (
         <>
             <Header />
-            <Box />
+            <Form />
             <Footer />
         </>
     );
