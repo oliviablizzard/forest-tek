@@ -4,7 +4,18 @@ export default function Box() {
     return (
         <section className="box">
             <div className="box__content">
-                content
+                <div class="cards">
+                    <div class="card-item">
+                        <div class="card-body">
+                            <img class="card-img" src="https://picsum.photos/250/200?image=480" alt="" />
+                            <h2 class="card-title center">Title</h2>
+                            <p class="card-text">Subtitle</p>
+                            <div class="card-footer center">
+                                <a class="btn" href="">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );

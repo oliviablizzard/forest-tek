@@ -1,0 +1,19 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/typography' as *;
+
+.button {
+    background-color: $sunny;
+    min-width: 10rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    font-family: "Aestetico";
+}
+
+
+

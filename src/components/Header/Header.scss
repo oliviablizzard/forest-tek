@@ -1,34 +1,18 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/global' as *;
 
+.header__wrapper {
+    background-color:#16482a;
+}
+
+.header__top {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
 .header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-.header__title {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.header__title--date {
-    border: 1px solid $green;
-    border-radius: 1rem;
-    padding: 0.25rem;
-    margin: 0.25rem;
-    width: 100%;
-    text-align: center;
-}
-
-.header__title--title{
-    border: 1px solid $green;
-    border-radius: 1rem;
-    padding: 0.25rem;
-    margin: 0.25rem;
-    width: 100%;
-    text-align: center;
 }

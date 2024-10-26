@@ -1,24 +1,34 @@
 import './Header.scss';
-import Logo from '../../assets/icons/logo.png';
-import Menu from '../../assets/icons/menu.png'
+import Logo from '../../assets/icons/FSC.png';
 
 export default function Header() {
     return (
-        <header className="header">
-            <div className="#">
-                <img src={Logo} className="logo" />
-            </div>
-            <div className="header__title">
-                <div className="header__title--date">
-                    todays date
+        <header className="header__wrapper">
+            <section className="header__top">
+                <div>
+                    About
                 </div>
-                <div className="header__title--title">
-                    title of the day
+                <div>
+                    Contact
                 </div>
-            </div>
-            <div>
-                <img src={Menu} className="logo" />
-            </div>
+                <div>
+                    Member Login
+                </div>
+            </section>
+            <section className="header">
+                <div>
+                    <img src={Logo} className="logo" />
+                </div>
+                <div>
+                    <div>
+                        button
+                    </div>
+                    <div>
+                        button
+                    </div>
+                </div>
+            </section>
+
         </header>
     );
 }

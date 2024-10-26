@@ -2,7 +2,82 @@
 @use '../../styles/partials/global' as *;
 
 .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    background: url('https://forestrysectorcouncil.ca/wp-content/uploads/2022/12/FSC-footer-trees-2.png') no-repeat right bottom;
+    background-color: #111;
+    background-size: cover;
+    padding: 20px;
+    color: #fff;
+  
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+  
+      .footer-column {
+        width: 33%;
+        padding: 0 15px;
+  
+        .footer-logo {
+          max-width: 230px;
+          margin-bottom: 20px;
+        }
+  
+        h5 {
+          margin-bottom: 15px;
+          font-size: 1.2em;
+        }
+  
+        p {
+          margin-bottom: 10px;
+        }
+  
+        .footer-button {
+          display: inline-block;
+          padding: 10px 20px;
+          background-color: #000;
+          color: #fff;
+          text-decoration: none;
+          margin-top: 10px;
+          transition: background-color 0.3s;
+  
+          &:hover {
+            background-color: #666;
+          }
+        }
+      }
+  
+      .social-links {
+        display: flex;
+        gap: 15px;
+  
+        .social-icon {
+          color: #fff;
+          text-decoration: none;
+          font-size: 24px;
+  
+          &:hover {
+            color: #666;
+          }
+        }
+      }
+    }
+  
+    .footer-bottom {
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+  
+      p {
+        margin: 5px 0;
+  
+        a {
+          color: #fff;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
