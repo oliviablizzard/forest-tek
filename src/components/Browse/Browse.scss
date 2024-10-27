@@ -1,3 +1,6 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/variables' as *;
+
 .icon-category-browse {
     display: flex;
     justify-content: center;
@@ -31,3 +34,17 @@
       color: #555;
     }
   }
+
+  // .browse {
+  //   &__card {
+  //     // Styles for each category card
+  //   }
+    
+  //   &__icon {
+  //     // Styles for the icon inside each card
+  //   }
+  
+  //   &__title {
+  //     // Styles for the title inside each card
+  //   }
+  // }

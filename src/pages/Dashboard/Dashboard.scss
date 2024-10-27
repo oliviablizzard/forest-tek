@@ -8,3 +8,22 @@
     padding: 0;
     margin: 0;
 }
+
+.geo {
+    &-container {
+        background-color: $Color2;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &-map {
+        max-width: 60%;
+    }
+}
+
+
+.data-container {
+    background-color: $Color2;
+    border: 1px solid $sunny;
+}
+

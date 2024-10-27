@@ -1,0 +1,42 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/global' as *;
+
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__top-row { 
+        background-color: $Color1;
+    }
+
+    &__bottom-row {
+        background-color: $Color2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-around;
+
+        &-li {
+            background-color: $Color2;
+            padding: 0.5rem;
+            margin: 0.25rem;
+            border-radius: 20px;
+        }
+
+        &-styling {
+            color: $Color6;
+        }
+    }
+
+    &__icon {
+        width: 50px;
+        height: 50px;
+        margin: 1rem;
+    }
+
+}
