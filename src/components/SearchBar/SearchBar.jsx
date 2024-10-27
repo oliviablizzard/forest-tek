@@ -4,21 +4,36 @@ import axios from 'axios';
 
 const SearchBar = ({ updateResults }) => {
     const [location, setLocation] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const [suggestions, setSuggestions] = useState([]);
 
     const handleSearch = async () => {
+        if (!location) return; // Prevent empty searches
         try {
             const response = await axios.get(`http://localhost:8080/programs?location=${location}`);
-            setResults(response.data);
-            setSuggestions([]); // Clear suggestions on successful search
+            updateResults(response.data.results || [], response.data.suggestions || []);
             setErrorMessage('');
         } catch (error) {
-            if (error.response && error.response.status === 404) {
-                // Use the suggestions from the response
+            handleError(error);
+        }
+    };
+
+    const handleError = (error) => {
+        if (error.response) {
+            if (error.response.status === 404) {
                 setSuggestions(error.response.data.suggestions || []);
+                updateResults([], suggestions); // Pass empty results to GeoSection
             } else {
                 setErrorMessage('An error occurred while searching.');
             }
+        } else {
+            setErrorMessage('Network error. Please try again.');
         }
+    };
+
+    const handleChange = (e) => {
+        setLocation(e.target.value);
+        setSuggestions([]); // Clear suggestions on input change
     };
 
     return (
@@ -40,7 +55,7 @@ const SearchBar = ({ updateResults }) => {
                             className="search-bar__input"
                             autoComplete="off"
                             value={location}
-                            onChange={(e) => setLocation(e.target.value)} 
+                            onChange={handleChange} 
                         />
                     </div>
                 </div>
@@ -52,6 +67,17 @@ const SearchBar = ({ updateResults }) => {
                     </svg>
                 </button>
             </div>
+            {errorMessage && <p className="search-bar__error">{errorMessage}</p>}
+            {suggestions.length > 0 && (
+                <div className="search-bar__suggestions">
+                    <h5>Suggestions:</h5>
+                    <ul>
+                        {suggestions.map((suggestion, index) => (
+                            <li key={index}>{suggestion}</li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
     );
 };

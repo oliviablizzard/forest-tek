@@ -22,8 +22,3 @@ function App() {
 }
 
 export default App;
-
-{/* <Route path="/home" element={<HomePage />} />
-<Route path="/contact" element={<ContactPage />} />
-<Route path="/tools" element={<ToolPage />} />
-<Route path="/directory" element={<DirectoryPage />} /> */}
