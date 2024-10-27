@@ -1,3 +1,104 @@
+Forest-TEK Dashboard Tool
+
+Overview
+
+Forest-TEK is a web application dashboard designed to facilitate collaboration among various stakeholders in the forestry industry. The app provides users with access to training opportunities, program offerings, and organizational resources to promote sustainable forest management practices across the East Coast of Canada.
+
+Problem Space
+
+Why is your app needed?
+
+	•	Environmental data is not always shared between organizations, and for the good of the climate, it is best to share information to work together to find data-driven solutions to the complex problems that the forest industry is facing.
+
+User Profile
+
+Who will use your app?
+
+	•	Woodlot Owners: They will use the app to find educational resources and programs that can help them manage their forests sustainably.
+	•	Industry Professionals: Users in this category will seek training opportunities and tools that can improve their practices and knowledge in forestry.
+	•	Students and Educators: They will utilize the platform to explore academic programs and gather information on current forestry practices and innovations.
+	•	Indigenous Groups: Users will look for programs and partnerships that support traditional ecological knowledge and collaborative initiatives.
+
+How will they use it?
+
+	•	Users will browse through program offerings based on their geographic location, search for training opportunities, and access contact information for various organizations in the forestry sector.
+
+What special considerations must your app address for different user groups?
+
+	•	Accessibility: The app should be user-friendly and accessible for individuals with varying levels of technological proficiency.
+	•	Localization: Ensure that program offerings are relevant to the East Coast of Canada, considering language preferences and cultural contexts.
+
+Features
+
+	•	Web App Dashboard: A central hub for users to navigate various resources and features.
+	•	Training and Education Opportunities: Users can find relevant training programs related to the forest industry.
+	•	Geographic Program Exploration: Users can explore program offerings based on their location within the East Coast of Canada.
+	•	Highlighted Programs: A section to showcase random programs that may be of interest to users.
+	•	Organizations Table: Users can view a table that includes organizations in the forestry sector along with their contact information.
+	•	Programs Table: Access to programs for studying forestry across New Brunswick, Nova Scotia, Prince Edward Island, and Newfoundland and Labrador.
+	•	Digital Tools Table: A quick reference to digital tools used in forestry, aiding users in finding appropriate resources.
+
+Implementation
+
+Tech Stack
+
+	•	Frontend: React, Sass, Vite
+	•	Backend: Node.js, Express
+	•	Database: MySQL with Knex for database queries
+	•	APIs: Axios for handling HTTP requests
+
+APIs
+
+	•	Forest Sector Council Website Data: Data from this external source will be used to populate training and program offerings in the app.
+
+Sitemap
+
+	1.	Home Page: Introduction to Forest-TEK and its mission.
+	2.	Training Opportunities: A list of available training programs and resources.
+	3.	Program Directory: A searchable directory of programs available by region.
+	4.	Highlighted Programs: Featured programs that are randomly selected.
+	5.	Organizations Table: A comprehensive list of forestry organizations with contact details.
+	6.	Digital Tools: A reference table for tools utilized in forestry management.
+
+Mockups
+
+	•	Create visuals using Figma or hand-drawn sketches to illustrate the layout and design of key pages, including:
+	•	Home Page
+	•	Training Opportunities
+	•	Program Directory
+	•	Organizations Table
+	•	Digital Tools Reference
+
+Data
+
+	•	User Data: Information about user accounts, including roles and preferences.
+	•	Training Programs Data: Details about various training programs, including descriptions and eligibility criteria.
+	•	Organizations Data: Information on organizations, including names, contact information, and descriptions of their services.
+	•	Programs Data: Information about forestry-related programs available in NB, NL, NS, and PEI.
+	•	Digital Tools Data: Information on digital tools used in the forestry sector.
+
+Endpoints
+
+Endpoint	HTTP Method	Parameters	Example Response
+/api/users	GET	N/A	{ "users": [{...}, {...}] }
+/api/training	GET	N/A	{ "training": [{...}, {...}] }
+/api/programs	GET	?province=NB	{ "programs": [{...}, {...}] }
+/api/organizations	GET	N/A	{ "organizations": [{...}, {...}] }
+/api/digital-tools	GET	N/A	{ "tools": [{...}, {...}] }
+
+Future Implementations
+
+	•	Mobile Responsiveness: Improve the app for optimal performance on mobile devices.
+	•	User Analytics Dashboard: Introduce features that allow users to track their engagement and contributions to the platform.
+	•	Enhanced Search Functionality: Develop more sophisticated filtering options for users to easily find resources and programs.
+	•	Integration with Additional APIs: Connect with other relevant data sources to enrich content and resource availability.
+
+
+
+
+
+
+
 # Project Title
 
 Forest-TEK

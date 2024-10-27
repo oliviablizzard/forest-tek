@@ -1,26 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Map from '../../assets/images/canada-east.png';
-import ProgramCard from '../ProgramCard/ProgramCard';
+import ProgramCard from '../../components/ProgramCard/ProgramCard';
 import './GeoData.scss';
-import axios from 'axios';
 
-const GeoData = ({ suggestions }) => {
-  const [randomPrograms, setRandomPrograms] = useState([]);
-
-  useEffect(() => {
-    const fetchRandomPrograms = async () => {
-      try {
-        const response = await axios.get('http://localhost:8080/programs/random');
-        setRandomPrograms(response.data); // Store the fetched programs
-      } catch (error) {
-        console.error('Error fetching programs:', error);
-      }
-    };
-
-    fetchRandomPrograms();
-  }, []);
-
+const GeoData = ({ randomPrograms, suggestions }) => {
   return (
     <section className="dashboard__geo">
       <div className="geo-container">
@@ -28,7 +12,7 @@ const GeoData = ({ suggestions }) => {
         <div className="geo-container__data">
           <div className="geo-container__results">
             {randomPrograms.length > 0 ? (
-              randomPrograms.map((program) => (
+              randomPrograms.slice(0, 5).map((program) => (
                 <ProgramCard key={program.id} program={program} /> // Ensure program.id is unique
               ))
             ) : (
@@ -49,7 +33,7 @@ const NoResults = ({ suggestions }) => (
         <h5>Suggested Locations:</h5>
         <ul>
           {suggestions.map((suggestion, index) => (
-            <li key={index}>{suggestion}</li> // Ensure the index is unique, but consider using a unique ID if possible
+            <li key={index}>{suggestion}</li> // Ideally, replace index with a unique value
           ))}
         </ul>
       </div>
@@ -66,10 +50,9 @@ export default GeoData;
 
 
 
-
 // import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
-// import Map from '../../assets/images/map-canada.svg';
+// import Map from '../../assets/images/canada-east.png';
 // import ProgramCard from '../ProgramCard/ProgramCard';
 // import './GeoData.scss';
 // import axios from 'axios';
@@ -79,12 +62,12 @@ export default GeoData;
 
 //   useEffect(() => {
 //     const fetchRandomPrograms = async () => {
-//         try {
-//             const response = await axios.get('http://localhost:8080/programs/random');
-//             // handle the response
-//         } catch (error) {
-//             console.error('Error fetching programs:', error);
-//         }
+//       try {
+//         const response = await axios.get('http://localhost:8080/programs/random');
+//         setRandomPrograms(response.data); // Store the fetched programs
+//       } catch (error) {
+//         console.error('Error fetching programs:', error);
+//       }
 //     };
 
 //     fetchRandomPrograms();
@@ -97,8 +80,8 @@ export default GeoData;
 //         <div className="geo-container__data">
 //           <div className="geo-container__results">
 //             {randomPrograms.length > 0 ? (
-//               randomPrograms.map((program, index) => (
-//                 <ProgramCard key={index} program={program} /> // Render ProgramCard for each random program
+//               randomPrograms.map((program) => (
+//                 <ProgramCard key={program.id} program={program} /> // Ensure program.id is unique
 //               ))
 //             ) : (
 //               <NoResults suggestions={suggestions} />
@@ -118,7 +101,7 @@ export default GeoData;
 //         <h5>Suggested Locations:</h5>
 //         <ul>
 //           {suggestions.map((suggestion, index) => (
-//             <li key={index}>{suggestion}</li>
+//             <li key={index}>{suggestion}</li> // Ensure the index is unique, but consider using a unique ID if possible
 //           ))}
 //         </ul>
 //       </div>
@@ -132,3 +115,5 @@ export default GeoData;
 // );
 
 // export default GeoData;
+
+
