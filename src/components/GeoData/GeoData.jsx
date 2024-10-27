@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Map from '../../assets/images/map-canada.svg';
+import Map from '../../assets/images/canada-east.png';
 import ProgramCard from '../ProgramCard/ProgramCard';
 import './GeoData.scss';
 import axios from 'axios';
@@ -29,7 +29,7 @@ const GeoData = ({ suggestions }) => {
           <div className="geo-container__results">
             {randomPrograms.length > 0 ? (
               randomPrograms.map((program) => (
-                <ProgramCard key={program.id} program={program} /> // Use program.id for the key
+                <ProgramCard key={program.id} program={program} /> // Ensure program.id is unique
               ))
             ) : (
               <NoResults suggestions={suggestions} />
@@ -49,7 +49,7 @@ const NoResults = ({ suggestions }) => (
         <h5>Suggested Locations:</h5>
         <ul>
           {suggestions.map((suggestion, index) => (
-            <li key={index}>{suggestion}</li>
+            <li key={index}>{suggestion}</li> // Ensure the index is unique, but consider using a unique ID if possible
           ))}
         </ul>
       </div>
