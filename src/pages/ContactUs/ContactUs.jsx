@@ -8,6 +8,7 @@ import "./ContactUs.scss";
 const ContactUs = ({ onClose }) => {
     const [submissionSuccess, setSubmissionSuccess] = useState(false); 
     const [suggestions, setSuggestions] = useState([]);
+    const [error, setError] = useState(null); // State for error handling
 
     // Fetch suggestions on component mount
     useEffect(() => {
@@ -17,6 +18,7 @@ const ContactUs = ({ onClose }) => {
                 setSuggestions(response.data);
             } catch (error) {
                 console.error("Error fetching suggestions:", error);
+                setError("Failed to load suggestions. Please try again later."); // Set error message
             }
         };
         fetchSuggestions();
@@ -26,11 +28,14 @@ const ContactUs = ({ onClose }) => {
         try {
             await axios.post("http://localhost:8080/api/suggestions", formData);
             setSubmissionSuccess(true);
-            fetchSuggestions(); // Re-fetch suggestions after successful submission
+            // Re-fetch suggestions after successful submission
+            const response = await axios.get("http://localhost:8080/api/suggestions");
+            setSuggestions(response.data);
             if (onClose) onClose();
         } catch (error) {
             console.error("Error submitting data:", error);
             setSubmissionSuccess(false);
+            setError("Failed to submit your suggestion. Please try again."); // Set error message
         }
     };
 
@@ -40,6 +45,7 @@ const ContactUs = ({ onClose }) => {
             <div className="contact-us__form-container">
                 <ContactForm fields={formFields} onSubmit={handleFormSubmit} onClose={onClose} />
                 {submissionSuccess && <p className="success-message">Your suggestion has been submitted successfully!</p>}
+                {error && <p className="error-message">{error}</p>} {/* Display error message */}
                 <SuggestionsList suggestions={suggestions} />
             </div>
         </div>

@@ -8,13 +8,15 @@ const SearchBar = ({ updateResults }) => {
     const handleSearch = async () => {
         try {
             const response = await axios.get(`http://localhost:8080/programs?location=${location}`);
-            updateResults(response.data, []); // Pass results and clear suggestions on successful search
+            setResults(response.data);
+            setSuggestions([]); // Clear suggestions on successful search
+            setErrorMessage('');
         } catch (error) {
             if (error.response && error.response.status === 404) {
-                const suggestions = ['Fredericton', 'Truro', 'Nova Scotia']; // Example suggestions
-                updateResults([], suggestions); // Pass empty results and suggestions on no results
+                // Use the suggestions from the response
+                setSuggestions(error.response.data.suggestions || []);
             } else {
-                console.error('Error fetching programs:', error);
+                setErrorMessage('An error occurred while searching.');
             }
         }
     };

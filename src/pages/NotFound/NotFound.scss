@@ -1,0 +1,25 @@
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/global' as *;
+
+.not-found {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height */
+        background-color: black; /* Black background */
+        color: white; /* White text for contrast */
+        text-align: center;
+    }
+    &__image {
+        width: 100%; /* Image takes full width */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 100vh; /* Prevent overflow */
+        max-width: 60vw;
+    }
+
+}
+
