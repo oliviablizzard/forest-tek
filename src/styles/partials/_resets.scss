@@ -1,0 +1,59 @@
+// SCSS Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  line-height: 1.15; // Improved readability
+  -webkit-text-size-adjust: 100%; // Prevent font scaling
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; // Default font family
+  font-size: 16px; // Base font size
+  color: #333; // Base text color
+  background-color: #fff; // Background color
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal; // Remove default browser weight
+  margin: 0; // Reset margin
+}
+
+p {
+  margin: 0; // Reset paragraph margin
+}
+
+ul,
+ol {
+  list-style: none; // Remove default list styles
+  padding: 0; // Reset padding
+}
+
+a {
+  text-decoration: none; // Remove underline from links
+  color: inherit; // Inherit color from parent
+}
+
+button {
+  border: none; // Remove default border
+  background: none; // Remove default background
+  font: inherit; // Inherit font properties
+  cursor: pointer; // Pointer cursor for buttons
+}
+
+input,
+textarea {
+  font: inherit; // Inherit font properties
+  line-height: normal; // Reset line height
+}

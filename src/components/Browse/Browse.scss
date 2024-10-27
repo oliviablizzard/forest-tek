@@ -1,0 +1,33 @@
+.icon-category-browse {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .icon-category-wrapper {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .icon-category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #39364F;
+  
+    &__image {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+  
+    &__title {
+      font-weight: bold;
+      text-align: center;
+    }
+  
+    &:hover {
+      color: #555;
+    }
+  }

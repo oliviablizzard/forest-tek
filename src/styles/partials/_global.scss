@@ -1,9 +1,6 @@
+@use './resets' as *;
 @use './variables' as *;
 @use './typography' as *;
-
-html {
-    font-family: 'aesthetico';
-}
 
 .logo {
     width: 10rem;
