@@ -2,9 +2,51 @@
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/global' as *;
 
-.search__wrapper {
-    background-color: $Color1;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+.data-page {
+    padding: 2rem;
+
+    &__title {
+        color: $Color1;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__section {
+        margin-bottom: 2rem;
+
+        &-title {
+            color: $Color2;
+            margin-bottom: 1rem;
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto; // Enable horizontal scrolling
+            gap: 1rem; // Space between cards
+            padding: 1rem 0;
+
+            &__card {
+                flex: 0 0 auto; // Prevent the card from shrinking
+                width: 200px; // Set a fixed width for the card
+                padding: 1rem;
+                background-color: $Color4;
+                border: 1px solid $Color2;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                transition: transform 0.2s;
+
+                &:hover {
+                    transform: scale(1.05); // Scale on hover
+                }
+
+                h3 {
+                    color: $Color1; // Heading color
+                }
+
+                p {
+                    color: $Color3; // Paragraph color
+                }
+            }
+        }
+    }
 }

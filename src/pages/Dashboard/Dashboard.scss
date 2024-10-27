@@ -2,28 +2,97 @@
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/global' as *;
 
-.search__wrapper {
-    background-color: $Color1;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-.geo {
-    &-container {
-        background-color: $Color2;
-        display: flex;
-        flex-direction: row;
+.dashboard {
+    &__header {
+        padding: 1rem;
+        background-color: $Color1;
+        text-align: center;
     }
 
-    &-map {
-        max-width: 60%;
+    &__search {
+        padding: 1rem;
+        background-color: $Color3;
+        border-bottom: 1px solid $Color2;
+    }
+
+    &__geo {
+        padding: 2rem 1rem;
+        background-color: $Color4;
+
+        .geo-container {
+            background-color: $Color2;
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            padding: 1rem;
+
+            &__map {
+                max-width: 60%;
+            }
+
+            &__data {
+                flex: 1;
+                padding: 1rem;
+                background-color: $Color5;
+                border: 1px solid $Color5;
+
+                &__results {
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+
+    &__browse {
+        padding: 1rem;
+        background-color: $Color3;
+        text-align: center;
+    }
+
+    &__action-button {
+        padding: 1rem;
+        text-align: center;
+        background-color: $Color4;
     }
 }
 
+.no-results {
+    padding: 1rem;
+    text-align: center;
+    color: $Color1;
 
-.data-container {
-    background-color: $Color2;
-    border: 1px solid $sunny;
+    &__suggestions {
+        margin-top: 1rem;
+        padding: 0.5rem;
+        background-color: $Color6;
+        border-radius: 4px;
+
+        h5 {
+            margin-bottom: 0.5rem;
+            color: $Color3;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+        }
+    }
+
+    &__contact-link {
+        display: inline-block;
+        margin-top: 1rem;
+    }
+
+    &__contact-button {
+        padding: 0.5rem 1rem;
+        background-color: $Color5;
+        color: $Color5;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $Color2;
+        }
+    }
 }
-

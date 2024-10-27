@@ -1,2 +1,26 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/global' as *;
+
+.homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: $Color1;
+
+    &__link {
+        text-decoration: none;
+    }
+
+    &__image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
