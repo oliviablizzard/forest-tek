@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Ignore specific folders and files
+/geo/
+.env
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
