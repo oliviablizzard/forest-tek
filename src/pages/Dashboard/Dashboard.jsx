@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Dashboard.scss";
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Browse from '../../components/Browse/Browse';
-import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
 import { Link } from 'react-router-dom';
 import GeoData from '../../components/GeoData/GeoData'; // Import the new GeoData component
