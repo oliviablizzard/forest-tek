@@ -2,68 +2,87 @@
 @use '../../styles/partials/variables' as *;
 
 .dashboard__geo {
-  padding: 2rem; // Add padding for visual separation
+  padding: 2rem;
+  background-color: #f4f4f9;
+}
 
-  .geo-container {
-    display: flex; // Use flexbox for layout
-    align-items: flex-start; // Align items at the start
-    gap: 2rem; // Space between the map and results
+.geo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 
-    &__map {
-      width: 60%; // Map takes up 60% of the width
-      height: auto; // Maintain aspect ratio
+  &__map {
+    height: 400px; // Adjust height based on your design
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__data {
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__results {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.no-results {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+
+  &__suggestions {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+
+    h5 {
+      color: #333;
+      font-weight: bold;
     }
 
-    &__data {
-      flex: 1; // Take the remaining width
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; // Align results to the left
-
-      &__results {
-        display: flex;
-        flex-direction: column; // Stack results vertically
-        gap: 1rem; // Space between result items
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        padding: 0.25rem 0;
+        color: #007bff;
       }
     }
   }
 
-  .no-results {
-    text-align: center; // Center the no-results message
+  &__contact-link {
+    text-decoration: none;
+  }
 
-    &__suggestions {
-      margin-top: 1rem;
-      padding: 0.5rem;
-      background-color: $Color6; // Adjust color as needed
-      border-radius: 4px;
+  &__contact-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
 
-      h5 {
-        margin-bottom: 0.5rem;
-        color: $Color3; // Adjust color as needed
-      }
-
-      ul {
-        list-style: disc;
-        padding-left: 1.5rem; // Indent the list
-      }
+    &:hover {
+      background-color: #0056b3;
     }
 
-    &__contact-link {
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    &__contact-button {
-      padding: 0.5rem 1rem;
-      background-color: $Color5; // Adjust color as needed
-      color: white; // Ensure good contrast
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $Color2; // Darken on hover
-      }
+    strong {
+      font-weight: bold;
     }
   }
 }
