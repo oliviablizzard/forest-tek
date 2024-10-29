@@ -1,70 +1,112 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
+import PropTypes from 'prop-types';
 import ProgramCard from '../../components/ProgramCard/ProgramCard';
+import axios from 'axios'; // Make sure to import axios
 import './GeoData.scss';
 
-const GeoData = ({ randomPrograms }) => {
-  useEffect(() => {
-    // Initialize the map with a center point and zoom level
-    const map = L.map('map').setView([45.4215, -75.699], 6); // Centered on Canada East
+const provinceCoordinates = {
+    'NB': [46.5653, -66.4619],
+    'NS': [44.6820, -63.7443],
+    'PEI': [46.5107, -63.4168],
+    'NL': [53.1355, -57.6604],
+    'ON': [51.2538, -85.3232],
+};
 
-    // Add OpenStreetMap tile layer
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; OpenStreetMap contributors',
-    }).addTo(map);
+const GeoData = ({ selectedProvince, searchQuery }) => {
+    const mapRef = useRef(null);
+    const [programs, setPrograms] = useState([]);
 
-    // Function to get coordinates based on province (for demo purposes)
-    const getCoordinatesByProvince = (province) => {
-      const provinceCoordinates = {
-        'Ontario': [51.2538, -85.3232],
-        'Quebec': [52.9399, -73.5491],
-        'New Brunswick': [46.5653, -66.4619],
-        'Nova Scotia': [44.6820, -63.7443],
-        'Manitoba': [53.7609, -98.8139],
-        'British Columbia': [53.7267, -127.6476],
-        'Alberta': [53.9333, -116.5765],
-        'Saskatchewan': [52.9399, -106.4509],
-        // Add more provinces as needed
-      };
-      return provinceCoordinates[province];
+    // Function to fetch programs based on selected province
+    const fetchPrograms = async () => {
+        try {
+            const response = await axios.get(`http://localhost:8080/programs`, {
+                params: {
+                    province: selectedProvince,
+                }
+            });
+            console.log('Fetched Programs:', response.data); // Log fetched programs
+            setPrograms(response.data); // Update the state with fetched programs
+        } catch (error) {
+            console.error('Error fetching programs:', error);
+        }
     };
 
-    // Add markers for each program
-    randomPrograms.forEach((program) => {
-      const coordinates = getCoordinatesByProvince(program.province);
-      if (coordinates) {
-        L.marker(coordinates)
-          .addTo(map)
-          .bindPopup(`<a href="${program.url}" target="_blank">${program.program_name}</a>`);
-      }
-    });
+    useEffect(() => {
+        if (selectedProvince) {
+            fetchPrograms(); // Fetch programs whenever the selected province changes
+        }
+    }, [selectedProvince]);
 
-    // Cleanup function to remove map on component unmount
-    return () => {
-      map.remove();
-    };
-  }, [randomPrograms]);
+    useEffect(() => {
+        if (!mapRef.current) {
+            mapRef.current = L.map('map').setView([45.4215, -75.699], 6);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; OpenStreetMap contributors',
+            }).addTo(mapRef.current);
+        }
 
-  return (
-    <section className="dashboard__geo">
-      <div className="geo-container">
-        <div id="map" className="geo-container__map"></div> {/* Leaflet Map */}
-        <div className="geo-container__data">
-          <div className="geo-container__results">
-            {randomPrograms.length > 0 &&
-              randomPrograms.slice(0, 5).map((program) => (
-                <ProgramCard key={program.id} program={program} />
-              ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+        // Clear existing markers
+        mapRef.current.eachLayer((layer) => {
+            if (layer instanceof L.Marker) {
+                mapRef.current.removeLayer(layer);
+            }
+        });
+
+        programs
+            .filter((program) => 
+                program.province === selectedProvince && 
+                program.program_name.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+            .forEach((program) => {
+                const coordinates = provinceCoordinates[program.province];
+                if (coordinates) {
+                    L.marker(coordinates)
+                        .addTo(mapRef.current)
+                        .bindPopup(
+                            program.url
+                                ? `<a href="${program.url}" target="_blank">${program.program_name}</a>`
+                                : program.program_name
+                        );
+                }
+            });
+
+        return () => {
+            mapRef.current.remove();
+            mapRef.current = null;
+        };
+    }, [programs, selectedProvince, searchQuery]);
+
+    return (
+        <section className="dashboard__geo">
+            <div className="geo-container">
+                <div id="map" className="geo-container__map"></div>
+                <div className="geo-container__data">
+                    <div className="geo-container__results">
+                        {programs
+                            .filter((program) => 
+                                program.province === selectedProvince && 
+                                program.program_name.toLowerCase().includes(searchQuery.toLowerCase())
+                            )
+                            .slice(0, 5)
+                            .map((program) => {
+                                console.log('Rendering ProgramCard with:', program); // Log each program being rendered
+                                return <ProgramCard key={program.id} program={program} />;
+                            })}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+GeoData.propTypes = {
+    selectedProvince: PropTypes.string.isRequired,
+    searchQuery: PropTypes.string.isRequired,
 };
 
 export default GeoData;
-
 
 // import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
