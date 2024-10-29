@@ -1,13 +1,11 @@
 import './Button.scss';
 
-export default function Button({ text }) {
+export default function Button() {
     return (
-        <section>
-            <div>
-                <div className="button">
-                        {text}
-                </div>
-            </div>
-        </section>
+        <button className="button">
+            <a href="/" className="button__content">Restart Demo</a>
+        </button>
     );
 }
+
+

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Dashboard.scss";
-import SearchBar from '../../components/SearchBar/SearchBar';
-import Browse from '../../components/Browse/Browse';
-import Header from '../../components/Header/Header';
-import GeoData from '../../components/GeoData/GeoData';
+import SearchBar from '../../components/Zz_Junk/SearchBar/SearchBar';
+import Browse from '../../components/Zz_Junk/Browse/Browse';
+import Header from '../../components/Zz_Junk/Header/Header';
+import GeoData from '../../components/Zz_Junk/GeoData/GeoData';
 import axios from 'axios';
 
 const Dashboard = () => {

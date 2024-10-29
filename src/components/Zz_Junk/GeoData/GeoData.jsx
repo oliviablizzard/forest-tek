@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import PropTypes from 'prop-types';
-import ProgramCard from '../../components/ProgramCard/ProgramCard';
+import ProgramCard from '../ProgramCard/ProgramCard';
 import axios from 'axios'; // Make sure to import axios
 import './GeoData.scss';
 
