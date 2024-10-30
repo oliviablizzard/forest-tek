@@ -1,90 +1,102 @@
 @use '../../styles/partials/variables' as *;
 
-div {
+.page {
     padding: 20px;
     font-family: Arial, sans-serif;
 
-    h1 {
-        font-size: 2em;
+    &__title {
+        font-size: 2rem;
         margin-bottom: 20px;
-        color: $primary-color;
+        color: #333;
     }
 
-    label {
-        font-size: 1em;
-        margin-right: 10px;
-    }
-
-    select {
+    &__filter {
+        display: flex;
+        align-items: center;
         margin-bottom: 20px;
-        padding: 5px;
-        border: 1px solid $card-border-color;
-        border-radius: $border-radius;
-        font-size: 1em;
+
+        &-label {
+            font-size: 1rem;
+            margin-right: 10px;
+            color: #555;
+        }
+
+        &-select {
+            font-size: 1rem;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+
+            &:focus {
+                border-color: #888;
+            }
+        }
     }
-}
 
-.program-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 10px;
+    }
 
-.program-card {
-    position: relative;
-    display: block;
-    width: 300px;
-    height: 200px;
-    background-color: $card-bg-color;
-    border: 1px solid $card-border-color;
-    border-radius: $border-radius;
-    padding: 16px;
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url('https://unsplash.com/photos/a-lake-surrounded-by-trees-vACW5dfx7Ho');
+    &__card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        width: 300px;
+        height: 400px;
+        padding: 15px;
+        text-align: center;
+        color: #fff;
         background-size: cover;
         background-position: center;
-        opacity: 0.5;
-        z-index: 1;
-    }
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+        text-decoration: none;
 
-    img {
-        position: relative;
-        z-index: 2;
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 12px;
-    }
+        &--hover {
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
 
-    h3 {
-        font-size: 1.25em;
-        margin-bottom: 8px;
-        position: relative;
-        z-index: 2;
-    }
+        &__logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+        }
 
-    p {
-        margin: 4px 0;
-        font-size: 1em;
-        position: relative;
-        z-index: 2;
-    }
+        &__name,
+        &__institution,
+        &__level {
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
 
-    &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        background-color: rgba(0, 150, 136, 0.7); // Adjust RGBA values for hover effect
+        &__name {
+            font-size: 1.2rem;
+            margin: 10px 0 5px;
+        }
+
+        &__institution,
+        &__level {
+            font-size: 0.9rem;
+            margin: 5px 0;
+            color: #eee;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
     }
 }
+
+

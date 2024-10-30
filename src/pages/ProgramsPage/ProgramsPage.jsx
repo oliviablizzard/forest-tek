@@ -28,37 +28,44 @@ const ProgramsPage = () => {
     }, [province]);
 
     return (
-        <div>
-            <h1>Programs</h1>
+        <div className="page">
+            <h1 className="page__title">Programs</h1>
 
-            <label htmlFor="province-select">Filter by Province:</label>
-            <select
-                id="province-select"
-                value={province}
-                onChange={(e) => setProvince(e.target.value)}
-            >
-                <option value="">All Provinces</option>
-                <option value="NB">New Brunswick</option>
-                <option value="NS">Nova Scotia</option>
-                <option value="NL">Newfoundland and Labrador</option>
-                <option value="PEI">Prince Edward Island</option>
-                <option value="ON">Ontario</option>
-            </select>
+            <div className="page__filter">
+                <label htmlFor="province-select" className="page__filter-label">
+                    Filter by Province:
+                </label>
+                <select
+                    id="province-select"
+                    className="page__filter-select"
+                    value={province}
+                    onChange={(e) => setProvince(e.target.value)}
+                >
+                    <option value="">All Provinces</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="PEI">Prince Edward Island</option>
+                    <option value="ON">Ontario</option>
+                </select>
+            </div>
 
-            <div className="program-cards">
+            <div className="page__cards">
                 {programs.map((program) => (
                     <Link
                         key={program.id}
                         to={program.url}
-                        className="program-card"
-                        style={{ 
-                            backgroundImage: `url(${program.image || DefaultImage})`
-                        }}
+                        className="page__card page__card--hover"
+                        style={{ backgroundImage: `url(${program.image || DefaultImage})` }}
                     >
-                        <img src={program.logo} alt={`${program.program_name} logo`} />
-                        <h3>{program.program_name}</h3>
-                        <p>{program.institution_name}</p>
-                        <p>{program.program_level}</p>
+                        <img
+                            src={program.logo}
+                            alt={`${program.program_name} logo`}
+                            className="page__card-logo"
+                        />
+                        <h3 className="page__card-name">{program.program_name}</h3>
+                        <p className="page__card-institution">{program.institution_name}</p>
+                        <p className="page__card-level">{program.program_level}</p>
                     </Link>
                 ))}
             </div>
