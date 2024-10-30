@@ -35,6 +35,12 @@ $Color6: #ffffff;
 $Color7: #c5e8d4;
 // (mobile menu font hover color)
 
+$primary-color: $Color1;
+$card-bg-color: $Color2;
+$card-border-color: $Color0; 
+$card-hover-bg-color: lighten($card-bg-color, 5%); 
+$border-radius: 8px;
+
 // // Headers
 // $header-padding-top-bottom: 20px !default;
 // $header-padding-left-right: 20px !default;

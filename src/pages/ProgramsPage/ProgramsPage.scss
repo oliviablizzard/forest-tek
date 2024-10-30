@@ -1,0 +1,69 @@
+// Variables for consistent styling
+@use '../../styles/partials/variables' as *;
+
+div {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: $primary-color;
+    }
+
+    label {
+        font-size: 1em;
+        margin-right: 10px;
+    }
+
+    select {
+        margin-bottom: 20px;
+        padding: 5px;
+        border: 1px solid $card-border-color;
+        border-radius: $border-radius;
+        font-size: 1em;
+    }
+}
+
+// Styling for program cards container
+.program-cards {
+    display: flex;
+    flex-wrap: wrap; // Allow cards to wrap onto new lines
+    gap: 16px; // Space between cards
+}
+
+// Individual program card styling
+.program-card {
+    display: block;
+    background-color: $card-bg-color;
+    border: 1px solid $card-border-color;
+    border-radius: $border-radius;
+    padding: 16px;
+    text-align: center; // Center text within the card
+    text-decoration: none; // Remove underline from links
+    color: black; // Text color
+
+    transition: transform 0.2s, box-shadow 0.2s; // Transition for hover effects
+
+    img {
+        max-width: 100%; // Ensure images fit within the card
+        height: auto; // Maintain aspect ratio
+        margin-bottom: 12px; // Space between image and text
+    }
+
+    h3 {
+        font-size: 1.25em; // Program name font size
+        margin-bottom: 8px; // Space below program name
+    }
+
+    p {
+        margin: 4px 0; // Space between paragraphs
+        font-size: 1em; // General paragraph font size
+    }
+
+    &:hover {
+        transform: scale(1.05); // Scale up on hover
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Add shadow effect
+        background-color: $card-hover-bg-color; // Change background color on hover
+    }
+}
