@@ -85,6 +85,6 @@ div {
     &:hover {
         transform: scale(1.05);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        background-color: $card-hover-bg-color;
+        background-color: rgba(0, 150, 136, 0.7); // Adjust RGBA values for hover effect
     }
 }
