@@ -1,10 +1,9 @@
-// Variables for consistent styling
 @use '../../styles/partials/variables' as *;
 
 div {
     padding: 20px;
     font-family: Arial, sans-serif;
-    
+
     h1 {
         font-size: 2em;
         margin-bottom: 20px;
@@ -25,45 +24,67 @@ div {
     }
 }
 
-// Styling for program cards container
 .program-cards {
     display: flex;
-    flex-wrap: wrap; // Allow cards to wrap onto new lines
-    gap: 16px; // Space between cards
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
-// Individual program card styling
 .program-card {
+    position: relative;
     display: block;
+    width: 300px;
+    height: 200px;
     background-color: $card-bg-color;
     border: 1px solid $card-border-color;
     border-radius: $border-radius;
     padding: 16px;
-    text-align: center; // Center text within the card
-    text-decoration: none; // Remove underline from links
-    color: black; // Text color
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
 
-    transition: transform 0.2s, box-shadow 0.2s; // Transition for hover effects
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('https://unsplash.com/photos/a-lake-surrounded-by-trees-vACW5dfx7Ho');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.5;
+        z-index: 1;
+    }
 
     img {
-        max-width: 100%; // Ensure images fit within the card
-        height: auto; // Maintain aspect ratio
-        margin-bottom: 12px; // Space between image and text
+        position: relative;
+        z-index: 2;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 12px;
     }
 
     h3 {
-        font-size: 1.25em; // Program name font size
-        margin-bottom: 8px; // Space below program name
+        font-size: 1.25em;
+        margin-bottom: 8px;
+        position: relative;
+        z-index: 2;
     }
 
     p {
-        margin: 4px 0; // Space between paragraphs
-        font-size: 1em; // General paragraph font size
+        margin: 4px 0;
+        font-size: 1em;
+        position: relative;
+        z-index: 2;
     }
 
     &:hover {
-        transform: scale(1.05); // Scale up on hover
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Add shadow effect
-        background-color: $card-hover-bg-color; // Change background color on hover
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: $card-hover-bg-color;
     }
 }

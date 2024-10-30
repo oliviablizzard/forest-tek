@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from '../../utils/api';
 import { Link } from 'react-router-dom';
 import './ProgramsPage.scss';
+import DefaultImage from '../../assets/images/default_card.png';
 
 const ProgramsPage = () => {
     const [programs, setPrograms] = useState([]);
@@ -46,7 +47,14 @@ const ProgramsPage = () => {
 
             <div className="program-cards">
                 {programs.map((program) => (
-                    <Link key={program.id} to={program.url} className="program-card">
+                    <Link
+                        key={program.id}
+                        to={program.url}
+                        className="program-card"
+                        style={{ 
+                            backgroundImage: `url(${program.image || DefaultImage})`
+                        }}
+                    >
                         <img src={program.logo} alt={`${program.program_name} logo`} />
                         <h3>{program.program_name}</h3>
                         <p>{program.institution_name}</p>
@@ -59,4 +67,3 @@ const ProgramsPage = () => {
 };
 
 export default ProgramsPage;
-
