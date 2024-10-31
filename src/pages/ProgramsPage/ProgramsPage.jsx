@@ -58,15 +58,16 @@ const ProgramsPage = () => {
                         className="page__card page__card--hover"
                         style={{ backgroundImage: `url(${program.image || DefaultImage})` }}
                     >
-                        <div className="page__card-content">
-                            <img
-                                src={program.logo}
-                                alt={`${program.program_name} logo`}
-                                className="page__card-logo"
-                            />
-                            <h3 className="page__card-name">{program.program_name}</h3>
-                            <p className="page__card-institution">{program.institution_name}</p>
-                            <p className="page__card-level">{program.program_level}</p>
+                        <div className="card">
+                            <h3 className="card__content-title">{program.program_name}</h3>
+                            <div className="card__logo">
+                                <img
+                                    src={program.logo}
+                                    alt={`${program.program_name} logo`}
+                                    className="card__logo-icon"
+                                />
+                            </div>
+                            <p className="card__content-text">{program.institution_name}</p>
                         </div>
                     </Link>
                 ))}
