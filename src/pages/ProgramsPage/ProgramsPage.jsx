@@ -72,6 +72,9 @@ const ProgramsPage = () => {
                     </Link>
                 ))}
             </div>
+            <div className="map">
+map
+            </div>
         </div>
     );
 };

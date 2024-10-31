@@ -62,7 +62,7 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
     text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
 
     &:hover {
         transform: scale(1.02);
@@ -81,7 +81,7 @@
     }
 
     &__logo {
-        width: 200px;
+        width: 80%;
         height: 100px;
         display: flex;
         align-items: center;
@@ -100,17 +100,21 @@
     }
 
     &__content-text {
+        width: 80%;
         font-size: 1rem;
-        color: #333;
+        color: #fff;
         margin: 5px 0;
-        background-color: rgba(255, 255, 255, 0.6);
-        border-radius: 2rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
         padding: 4px;
         z-index: 2;
     }
 
     &__content-title {
-        color: black;
-        font-size: 2rem;
+        width: 80%;
+        color: white;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        z-index: 1;
     }
 }
