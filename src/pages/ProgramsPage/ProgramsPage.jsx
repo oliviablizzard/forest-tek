@@ -3,6 +3,7 @@ import axios from '../../utils/api';
 import { Link } from 'react-router-dom';
 import './ProgramsPage.scss';
 import DefaultImage from '../../assets/images/default_card.png';
+import Map from '../../components/Map/Map.jsx';
 
 const ProgramsPage = () => {
     const [programs, setPrograms] = useState([]);
@@ -72,8 +73,8 @@ const ProgramsPage = () => {
                     </Link>
                 ))}
             </div>
-            <div className="map">
-map
+            <div>
+                <Map />
             </div>
         </div>
     );

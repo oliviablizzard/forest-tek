@@ -1,0 +1,27 @@
+#map {
+    width: 948px; /* Or use 100% for responsive design */
+    height: 712px; /* Adjust this as needed */
+  }
+  
+  /* Additional styles from the <style> tags */
+  html, body {
+    background-color: #ffffff;
+  }
+  .ol-control > * {
+    background-color: #f8f8f8 !important;
+    color: #444444 !important;
+    border-radius: 0px;
+  }
+  .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
+    color: #444444 !important;
+  }
+  .search-layer-input-search {
+    background-color: #f8f8f8 !important;
+  }
+  .ol-control > *:focus, .ol-control > *:hover {
+    background-color: rgba(248, 248, 248, 0.7) !important;
+  }
+  .ol-control {
+    background-color: rgba(255, 255, 255, .4) !important;
+    padding: 2px !important;
+  }
